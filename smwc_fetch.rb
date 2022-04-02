@@ -32,7 +32,7 @@ types = {
       featured: data.css("td")[2].children.text.strip == "Yes",
       length: data.css("td")[3].children.text.strip.to_i,
       types: data.css("td")[4].children.text.split(",").map { |type| types[type.strip] },
-      author: data.css("td")[5].css("a").map { |author|
+      authors: data.css("td")[5].css("a").map { |author|
         {
           id: author.attributes["href"].value.tr("^0-9", "").to_i,
           name: author.children[0].text,
